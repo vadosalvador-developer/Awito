@@ -7,10 +7,12 @@ const modalSubmit = document.querySelector('.modal__submit');
 const catalog = document.querySelector('.catalog');
 const modalItem = document.querySelector('.modal__item');
 
+/*Для закрытия модалок*/
 const modalClose = (modal) => {
   modal.classList.add('hide');
 };
 
+/*Закрытие по Esc*/
 document.addEventListener('keydown', (event) => {
   if (event.keyCode === 27) {
     modalClose(modalItem);
@@ -18,6 +20,7 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
+/*Добавить объявление*/
 addAd.addEventListener('click', () => {
   modalAdd.classList.remove('hide');
   modalBtnSubmit.disabled = true;
@@ -31,6 +34,7 @@ modalAdd.addEventListener('click', (event) => {
   }
 });
 
+/*Открыть карточку товара*/
 catalog.addEventListener('click', (event) => {
   if (event.target != catalog) {
     modalItem.classList.remove('hide');
