@@ -13,14 +13,14 @@ const modalClose = (modal) => {
 };
 
 /*Закрытие по Esc*/
-document.addEventListener('keydown', (event) => {
+document.body.addEventListener('keydown', (event) => {
   if (event.keyCode === 27) {
     modalClose(modalItem);
     modalClose(modalAdd);
   }
 });
 
-/*Добавить объявление*/
+/*Открытие и закрытие окна с созданием объявления*/
 addAd.addEventListener('click', () => {
   modalAdd.classList.remove('hide');
   modalBtnSubmit.disabled = true;
@@ -34,7 +34,7 @@ modalAdd.addEventListener('click', (event) => {
   }
 });
 
-/*Открыть карточку товара*/
+/*Открытие и закрытие карточки товара*/
 catalog.addEventListener('click', (event) => {
   if (event.target != catalog) {
     modalItem.classList.remove('hide');
